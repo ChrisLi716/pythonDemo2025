@@ -64,3 +64,51 @@ print(b[-2:-5])  # 截取不到值, 因不截取方向不一致
 print(b[-2:-5:-1])  # oht
 print(b[-1::-1])  # nohtyP olleH, 从右往左截取
 print(b[0::3])  # HlPh
+
+
+# 1. 查询-find，查询字段符是否存在于目标字符串中，存在返回第一次出现位置的下标，不存在返回-1
+# find(子字符串，[开始位置下标，结束位置下标])
+# [开始位置下标，结束位置下标] 包前不包后
+a = 'hello, python!'
+print(a.find('t'))  # 9
+print(a.find('t', 8))  # 9
+print(a.find('t', 9))  # 9
+print(a.find('t', 10))  # -1， 超出范围返回-1
+print(a.find('py', 3, 8))  # -1， 超出范围返回-1
+print(a.find('py', 3, 9))  # 7
+
+# 1. 查询-index，查询字段符是否存在于目标字符串中，存在返回第一次出现位置的下标，不存在报错
+# index(子字符串，[开始位置下标，结束位置下标])
+# [开始位置下标，结束位置下标] 包前不包后
+
+a = 'hello, Chris!'
+print(a.index('el'))  # 1
+# print(a.index('el', 8))  # ValueError: substring not found
+# print(a.index('Ch', 3, 8))  # ValueError: substring not found
+print(a.index('Ch', 3, 9))  # 7
+
+# count(), 返回某个字符串在整个字符串中出现的次数，没有返回0
+# count(子字符串，[开始位置下标，结束位置下标])
+# [开始位置下标，结束位置下标] 包前不包后
+c = '我命由我不由天'
+print(c.count('我'))  # 2
+print(c.count('我', 1))  # 1
+print(c.count('我', 1, 3))  # 0
+
+# startswith(), 判断是否以某个子字符串开头
+# startswith(子字符串，[开始位置下标，结束位置下标])
+# [开始位置下标，结束位置下标] 包前不包后
+a = 'nothing is good, nothing is bad!'
+print(a.startswith('no'))  # True
+print(a.startswith('nh'))  # False
+print(a.startswith('th', 2))  # True
+print(a.startswith('th', 2, 3))  # False
+print(a.startswith('th', 2, 4))  # True
+
+# endswith(), 判断是否以某个子字符串开头
+# endswith(子字符串，[开始位置下标，结束位置下标])
+# [开始位置下标，结束位置下标] 包前不包后
+
+print(a.endswith('d!', ))  # True
+print(a.endswith('ing', 1, 6))  # False
+print(a.endswith('ing', 1, 7))  # True
